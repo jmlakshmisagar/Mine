@@ -15,10 +15,10 @@ export default function Arrows() {
   const [selectedSection, setSelectedSection] = useState<string | null>(null);
 
   const arrows = [
-    { direction: 'top', rotation: 270, title: 'Skills', titleRotation: 0 },
-    { direction: 'right', rotation: 0, title: 'Projects', titleRotation: -90 },
-    { direction: 'bottom', rotation: 90, title: 'Education', titleRotation: 0 },
-    { direction: 'left', rotation: 180, title: 'Experience', titleRotation: 90 },
+    { direction: 'top', rotation: 270,  titleRotation: 0 },
+    { direction: 'right', rotation: 0,  titleRotation: -90 },
+    { direction: 'bottom', rotation: 90, titleRotation: 0 },
+    { direction: 'left', rotation: 180,  titleRotation: 90 },
   ];
 
   useEffect(() => {
@@ -44,7 +44,7 @@ export default function Arrows() {
   return (
     <>
       <div className="arrows-container">
-        {arrows.map(({ direction, rotation, title, titleRotation }) => (
+        {arrows.map(({ direction, rotation, titleRotation }) => (
           activeArrows.includes(direction) && (
             <motion.div
               key={direction}
@@ -69,15 +69,6 @@ export default function Arrows() {
                   className="arrow-svg"
                   style={{ transform: `rotate(${rotation}deg)` }}
                 />
-                <motion.span 
-                  className={`arrow-title title-${direction}`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                  style={{ transform: `rotate(${titleRotation}deg)` }}
-                >
-                  {title}
-                </motion.span>
               </motion.div>
             </motion.div>
           )

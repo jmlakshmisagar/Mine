@@ -32,7 +32,7 @@ export default function TopSection({ onClose }: { onClose: () => void }) {
 
   return (
     <motion.div
-      className="section-content"
+      className="section-content jakarta"
       initial={{ y: "-100%", opacity: 0 }}
       animate={{ y: "0%", opacity: 1 }}
       exit={{ y: "-100%", opacity: 0 }}
@@ -44,7 +44,7 @@ export default function TopSection({ onClose }: { onClose: () => void }) {
         whileHover={{ scale: 1.1, backgroundColor: "rgba(188, 170, 164, 0.2)" }}
         whileTap={{ scale: 0.9 }}
       >
-        <span className="close-icon">×</span>
+        <span className="close-icon">X</span>
       </motion.button>
       <div className="section-inner">
         <h1 className="section-title fondamento">Education</h1>

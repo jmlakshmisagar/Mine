@@ -7,18 +7,57 @@
 :root {
   --bg-dark: #121212;
   --bg-card: rgba(255, 255, 255, 0.05);
-  --brown-accent: rgba(188, 170, 164, 0.15);
-  --brown-hover: rgba(146, 145, 145, 0.25);
+  --brown-accent: rgba(201, 201, 201, 0.15);
+  --brown-hover: rgba(201, 201, 201, 0.25);
   --text-primary: rgba(255, 255, 255, 0.95);
   --text-secondary: rgba(255, 255, 255, 0.7);
+
+  /* Font families */
+  --font-fondamento: 'Fondamento', cursive;
+  --font-funnel: 'Funnel Display', sans-serif;
+  --font-gideon: 'Gideon Roman', serif;
+  --font-kanit: 'Kanit', sans-serif;
+  --font-nunito: 'Nunito Sans', sans-serif;
+  --font-outfit: 'Outfit', sans-serif;
+  --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+  --font-prompt: 'Prompt', sans-serif;
+  --font-space: 'Space Grotesk', sans-serif;
 }
 
 .fondamento {
-  font-family: 'Fondamento', cursive;
+  font-family: var(--font-fondamento);
+}
+
+.funnel {
+  font-family: var(--font-funnel);
+}
+
+.gideon {
+  font-family: var(--font-gideon);
+}
+
+.kanit {
+  font-family: var(--font-kanit);
+}
+
+.nunito {
+  font-family: var(--font-nunito);
+}
+
+.outfit {
+  font-family: var(--font-outfit);
 }
 
 .jakarta {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-jakarta);
+}
+
+.prompt {
+  font-family: var(--font-prompt);
+}
+
+.space {
+  font-family: var(--font-space);
 }
 
 .main-title {
@@ -144,29 +183,6 @@ ul li a:hover {
   }
 }
 
-.cursor {
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid var(--brown-accent);
-  border-radius: 50%;
-  position: fixed;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  backdrop-filter: invert(0.2);
-  transition: transform 0.15s ease;
-}
-
-@keyframes cursorAppear {
-  from {
-    transform: translate(-50%, -50%) scale(0);
-  }
-  to {
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
-
 @keyframes textZoomOut {
   from {
     opacity: 0;
@@ -178,16 +194,14 @@ ul li a:hover {
   }
 }
 
-a:hover~.cursor,
-button:hover~.cursor {
-  transform: translate(-50%, -50%) scale(1.5);
+* { 
+  cursor: auto; /* Change from 'none' to 'auto' */
 }
 
-* { cursor: none; }
-
 @media (hover: none) {
-  .cursor { display: none; }
-  * { cursor: auto; }
+  * { 
+    cursor: auto; 
+  }
 }
 
 @media (max-width: 768px) {

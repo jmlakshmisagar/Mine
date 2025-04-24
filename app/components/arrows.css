@@ -1,0 +1,143 @@
+.arrows-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.arrow-wrapper {
+  position: absolute;
+  cursor: pointer;
+  pointer-events: auto;
+  color: white;
+}
+
+.arrow-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.arrow-svg {
+  filter: invert(1);
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.arrow-wrapper:hover .arrow-svg {
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.arrow-title {
+  position: absolute;
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.arrow-wrapper:hover .arrow-title {
+  opacity: 1;
+}
+
+.arrow-top {
+  top: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.arrow-right {
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+}
+
+.arrow-bottom {
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.arrow-left {
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+}
+
+/* Title positions */
+.title-top {
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.title-right {
+  left: 120%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.title-bottom {
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.title-left {
+  right: 120%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.section-content {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.95);
+  z-index: 20;
+  padding: 2rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-inner {
+  padding: 2rem;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.section-content-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.close-button {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 30;
+}
+
+.close-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}

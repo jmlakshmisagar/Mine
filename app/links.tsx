@@ -17,19 +17,8 @@ export default function Links() {
       }
     };
 
-    // Check online status
-    const handleOnlineStatus = () => {
-      setIsOnline(navigator.onLine);
-    };
 
-    loadVisitedLinks();
-    window.addEventListener('online', handleOnlineStatus);
-    window.addEventListener('offline', handleOnlineStatus);
-
-    return () => {
-      window.removeEventListener('online', handleOnlineStatus);
-      window.removeEventListener('offline', handleOnlineStatus);
-    };
+    
   }, []);
 
   const handleLinkClick = (href: string) => {

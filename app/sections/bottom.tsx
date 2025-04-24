@@ -5,28 +5,32 @@ import { motion } from 'framer-motion';
 export default function BottomSection({ onClose }: { onClose: () => void }) {
   const experiences = [
     {
-      role: "Senior Software Engineer",
-      company: "Tech Corp",
-      period: "2022 - Present",
-      description: "Leading frontend development team, implementing modern web solutions using React and Next.js"
+      role: "Trainee Software Engineer",
+      company: "Mphasis",
+      period: "Jan 2024 - Present",
+      description: "Java Full Stack training (Spring Boot, Angular). Working on Centralized Internship Program.",
+      location: "Onsite"
     },
     {
-      role: "Software Developer",
-      company: "Digital Solutions Inc",
-      period: "2020 - 2022",
-      description: "Full-stack development with focus on scalable applications and cloud infrastructure"
+      role: "Software Engineer Intern",
+      company: "Center of Excellence IoT, CISCO - RVCE",
+      period: "Aug - Dec 2024",
+      description: "Developed IoT-based Smart Irrigation System using PERN stack for JJ Infrastructure.",
+      location: "Onsite"
     },
     {
-      role: "Junior Developer",
-      company: "StartUp Tech",
+      role: "Campus Ambassador",
+      company: "KRAYONNZ",
+      period: "Feb - Apr 2023",
+      description: "Led student onboarding and content creation for educational platform.",
+      location: "Remote"
+    },
+    {
+      role: "Stock Helper",
+      company: "Shri shrinivasa sports and computer peripherals",
       period: "2019 - 2020",
-      description: "Worked on various web development projects using modern technologies and best practices"
-    },
-    {
-      role: "Intern Developer",
-      company: "Tech Solutions",
-      period: "2018 - 2019",
-      description: "Gained hands-on experience with web development and software engineering principles"
+      description: "Managed inventory and assisted sales.",
+      location: "Onsite"
     }
   ];
 
@@ -36,7 +40,7 @@ export default function BottomSection({ onClose }: { onClose: () => void }) {
       initial={{ y: "100%", opacity: 0 }}
       animate={{ y: "0%", opacity: 1 }}
       exit={{ y: "100%", opacity: 0 }}
-      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      transition={{ type: "spring", stiffness: 100, damping: 20 }}
     >
       <motion.button 
         className="close-button"
@@ -44,7 +48,7 @@ export default function BottomSection({ onClose }: { onClose: () => void }) {
         whileHover={{ scale: 1.1, backgroundColor: "rgba(188, 170, 164, 0.2)" }}
         whileTap={{ scale: 0.9 }}
       >
-        <span className="close-icon">X</span>
+        <span className="close-icon">×</span>
       </motion.button>
       <div className="section-inner">
         <h1 className="section-title fondamento">Experience</h1>
@@ -55,13 +59,16 @@ export default function BottomSection({ onClose }: { onClose: () => void }) {
               className="experience-card"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.2 }}
             >
               <div className="experience-header">
                 <h2 className="experience-role fondamento">{exp.role}</h2>
                 <span className="experience-period">{exp.period}</span>
               </div>
-              <h3 className="experience-company">{exp.company}</h3>
+              <div className="experience-subheader">
+                <h3 className="experience-company">{exp.company}</h3>
+                {exp.location && <span className="experience-location">{exp.location}</span>}
+              </div>
               <p className="experience-description">{exp.description}</p>
             </motion.div>
           ))}

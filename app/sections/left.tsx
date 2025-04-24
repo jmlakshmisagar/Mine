@@ -5,33 +5,30 @@ import { motion } from 'framer-motion';
 export default function LeftSection({ onClose }: { onClose: () => void }) {
   const projects = [
     {
-      title: "Portfolio Website", 
-      shortDescription: "Next.js & Framer Motion Next.js & Framer Motion Next.js & Framer Motion Next.js & Framer Motion",
-      technologies: ["Next.js", "TypeScript"],
-      github: "https://github.com/yourusername/portfolio",
-      live: "https://portfolio.demo.com"
+      title: "Employee-Management-Auto-Code-Generator",
+      shortDescription: "A web prototype application that generates code for employee management systems for the client.",
+      technologies: ["Angular", "Node.js", "Express", "MySQL"],
     },
     {
-      title: "E-Commerce Platform",
-      shortDescription: "Next.js & Framer Motion Next.js & Framer Motion Next.js & Framer Motion Next.js & Framer Motion",
-      technologies: ["React", "Node.js"],
-      github: "https://github.com/yourusername/ecommerce",
-      live: "https://ecommerce.demo.com"
+      title: "Smart-Irrigation-and-Fartigation-in-Arecanut-Farm", 
+      shortDescription: "PERN stack IoT-based Smart Irrigation System",
+      technologies: ["PostgreSQL", "Express", "React", "Node.js"],
+      github: "https://github.com/CISCO-RVCE-CoE-IoT/Smart-Irrigation-and-Fartigation-in-Arecanut-Farm",
     },
     {
-      title: "AI Chat Application",
-      shortDescription: "Real-time AI chat",
-      technologies: ["Python", "TensorFlow"],
-      github: "https://github.com/yourusername/ai-chat",
-      live: "https://ai-chat.demo.com"
+      title: "Eazymass",
+      shortDescription: "A full-stack web application to monitor and visualize daily weight data",
+      technologies: ["Next.js", "Tailwind CSS", "Firebase"],
+      github: "https://github.com/jmlakshmisagar/Eazymass",
+      live: "https://jmlakshmisagar.github.io/EazymassLive/"
     },
     {
-      title: "Task Management",
-      shortDescription: "Team collaboration app",
-      technologies: ["Vue.js", "Firebase"],
-      github: "https://github.com/yourusername/task-app",
-      live: "https://task-app.demo.com"
-    }
+      title: "Seat-Allotment-Process",
+      shortDescription: "A seat allocation system that assigns students seats based on rank, preferred college, category, and priority according to KEA guidelines, streamlining the merit-based process.",
+      technologies: ["Python", "Jupyter Notebook"],
+      github: "https://github.com/jmlakshmisagar/Seat-Allotment-Process",
+    },
+    
   ];
 
   return (
@@ -40,7 +37,7 @@ export default function LeftSection({ onClose }: { onClose: () => void }) {
       initial={{ x: "-100%", opacity: 0 }}
       animate={{ x: "0%", opacity: 1 }}
       exit={{ x: "-100%", opacity: 0 }}
-      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      transition={{ type: "spring", stiffness: 100, damping: 20 }}
     >
       <motion.button 
         className="close-button"
@@ -59,7 +56,7 @@ export default function LeftSection({ onClose }: { onClose: () => void }) {
               className="project-card"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.2 }}
             >
               <h2 className='fondamento' style={{fontSize:'24px'}}>{project.title}</h2>
               <p>{project.shortDescription}</p>

@@ -15,22 +15,24 @@ export default function Arrows() {
   const [selectedSection, setSelectedSection] = useState<string | null>(null);
 
   const arrows = [
-    { direction: 'top', rotation: 270,  titleRotation: 0 },
-    { direction: 'right', rotation: 0,  titleRotation: -90 },
+    { direction: 'top', rotation: 270, titleRotation: 0 },
+    { direction: 'right', rotation: 0, titleRotation: -90 },
     { direction: 'bottom', rotation: 90, titleRotation: 0 },
-    { direction: 'left', rotation: 180,  titleRotation: 90 },
+    { direction: 'left', rotation: 180, titleRotation: 90 },
   ];
 
   useEffect(() => {
-    // Delay the appearance of arrows
+    // Delay arrows until after main title (3.5s), subtitle (4s), and icons (4.5s + stagger)
+    const startDelay = 7000; // Start after all other animations
+
     setTimeout(() => {
       const directions = arrows.map(arrow => arrow.direction);
       directions.forEach((direction, index) => {
         setTimeout(() => {
           setActiveArrows(prev => [...prev, direction]);
-        }, index * 200); // Sequentially show arrows
+        }, index * 500); // Increased delay between arrows for better visibility
       });
-    }, 4500); // Start after other animations
+    }, startDelay);
   }, []);
 
   const handleArrowClick = (direction: string) => {
@@ -49,16 +51,26 @@ export default function Arrows() {
             <motion.div
               key={direction}
               className={`arrow-wrapper arrow-${direction}`}
-              initial={{ opacity: 0, scale: 0.5 }}
+              initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.5 }}
+              exit={{ opacity: 0, scale: 0 }}
+              transition={{ 
+                duration: 0.5,
+                ease: "easeOut"
+              }}
               onClick={() => handleArrowClick(direction)}
             >
               <motion.div 
                 className="arrow-container"
-                animate={{ x: direction === 'left' || direction === 'right' ? [0, 10, 0] : 0,
-                          y: direction === 'top' || direction === 'bottom' ? [0, 10, 0] : 0 }}
-                transition={{ repeat: Infinity, duration: 2 }}
+                animate={{ 
+                  x: direction === 'left' || direction === 'right' ? [0, 10, 0] : 0,
+                  y: direction === 'top' || direction === 'bottom' ? [0, 10, 0] : 0 
+                }}
+                transition={{ 
+                  repeat: Infinity, 
+                  duration: 2,
+                  ease: "easeInOut"
+                }}
                 whileHover={{ scale: 1.1 }}
               >
                 <Image
